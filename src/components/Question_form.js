@@ -158,9 +158,10 @@ import {DragDropContext,Droppable,Draggable} from "react-beautiful-dnd";
           <AccordionDetails className="add_question">
             <div className="add_question_top">
               <input type="text" className="question" placeholder="Question" value={ques.questionText} onChange={(e)=>{changeQuestion(e.target.value,i)}}></input>
-              <CropOriginalIcon style={{color:"#5f6368"}} />
+              {/* <CropOriginalIcon style={{color:"#5f6368"}} /> */}
               <Select className="select" style={{color:"#5f6368",fontSize:"13px"}}>
-                <MenuItem id="text" value="Text" onClick={()=>{addQuestionType(i,"text")}}><SubjectIcon style={{marginRight:"10px"}} />Paragraph</MenuItem>
+                <MenuItem id="text" value="Text" onClick={()=>{addQuestionType(i,"text")}}><SubjectIcon style={{marginRight:"10px"}} />Short answer</MenuItem>
+                <MenuItem id="text" value="Text" onClick={()=>{addQuestionType(i,"text")}}><SubjectIcon style={{marginRight:"10px"}} />Long answer</MenuItem>
                 <MenuItem id="checkbox" value="Checkbox" onClick={()=>{addQuestionType(i,"checkbox")}}><CheckBoxIcon style={{marginRight:"10px", color:"#70757a"}} checked />checkbox</MenuItem>
                 <MenuItem id="radio" value="Radio" onClick={()=>{addQuestionType(i,"radio")}}><Radio style={{marginRight:"10px", color:"#70757a"}} checked />Multiple choice </MenuItem>
               </Select>
@@ -176,7 +177,7 @@ import {DragDropContext,Droppable,Draggable} from "react-beautiful-dnd";
                   <input type="text" className="text_input" placeholder="options" value={ques.options[j].optionText} onChange={(e)=>{changeOptionValue(e.target.value,i,j)}}></input>
                 </div>
 
-                <CropOriginalIcon style={{color:"#5f6368"}}/>
+                {/* <CropOriginalIcon style={{color:"#5f6368"}}/> */}
                 <IconButton aria-label='delete'>
                   <CloseIcon onClick={()=>{removeOption(i,j)}}/>
                 </IconButton>
